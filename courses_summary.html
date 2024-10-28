@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Courses Summary - Empowering the Nation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Empowering the Nation Logo">
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses_summary.html">Courses</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                </ul>
+            </nav>
+            <!-- Search bar added -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search for courses..." id="course-search">
+                <button type="button" onclick="searchCourses()">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <h1>All Available Courses</h1>
+
+        <h2>Six-Month Courses</h2>
+        <div class="courses" id="six-month-courses">
+            <div class="course">
+                <h3>First Aid</h3>
+                <p>Learn how to administer first aid and provide basic life support skills.</p>
+                <a href="six month first aid.html" class="button">Enquire</a>
+                <button onclick="addToCart('First Aid', 1500)" class="button">Register</button>
+            </div>
+            <div class="course">
+                <h3>Sewing</h3>
+                <p>Learn alterations and new garment tailoring services.</p>
+                <a href="six month sewing.html" class="button">Enquire</a>
+                <button onclick="addToCart('Sewing', 1500)" class="button">Register</button>
+            </div>
+            <div class="course">
+                <h3>Landscaping</h3>
+                <p>Learn about providing landscaping services for gardens.</p>
+                <a href="six month landscaping.html" class="button">Enquire</a>
+                <button onclick="addToCart('Landscaping', 1500)" class="button">Register</button>
+            </div>
+            <div class="course">
+                <h3>Life Skills</h3>
+                <p>Learn basic life necessities, from banking to literacy skills.</p>
+                <a href="six month lifeskills.html" class="button">Enquire</a>
+                <button onclick="addToCart('Life Skills', 1500)" class="button">Register</button>
+            </div>
+        </div>
+
+        <h2>Six-Week Courses</h2>
+        <div class="courses" id="six-week-courses">
+            <div class="course">
+                <h3>Child Minding</h3>
+                <p>Learn the basics of child and baby care.</p>
+                <a href="six week child minding.html" class="button">Enquire</a>
+                <button onclick="addToCart('Child Minding', 750)" class="button">Register</button>
+            </div>
+            <div class="course">
+                <h3>Cooking</h3>
+                <p>Learn how to prepare and cook nutritious family meals.</p>
+                <a href="six week cooking.html" class="button">Enquire</a>
+                <button onclick="addToCart('Cooking', 750)" class="button">Register</button>
+            </div>
+            <div class="course">
+                <h3>Garden Maintenance</h3>
+                <p>Learn watering, pruning, and planting in a domestic garden.</p>
+                <a href="six week garden maintenance.html" class="button">Enquire</a>
+                <button onclick="addToCart('Garden Maintenance', 750)" class="button">Register</button>
+            </div>
+        </div>
+
+        <!-- Button to view selected courses and calculate total fees -->
+        <h3>Your Registration</h3>
+        <a href="Review Courses.html" class="button">Review Your Selected Courses</a>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>&copy; 2024 Empowering the Nation. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Cart stored in localStorage
+
+        function addToCart(courseName, price) {
+            // Check if the course is already in the cart
+            const courseExists = cart.some(course => course.name === courseName);
+            
+            if (courseExists) {
+                alert(`${courseName} has already been added to your registration.`);
+            } else {
+                cart.push({ name: courseName, price: price });
+                alert(`${courseName} has been added to your registration.`);
+                updateCart();
+            }
+        }
+
+        function updateCart() {
+            localStorage.setItem('cart', JSON.stringify(cart)); // Save to localStorage for persistence
+        }
+
+        // Simple search function for courses
+        function searchCourses() {
+            const searchQuery = document.getElementById('course-search').value.toLowerCase();
+            const sixMonthCourses = document.getElementById('six-month-courses').children;
+            const sixWeekCourses = document.getElementById('six-week-courses').children;
+
+            Array.from(sixMonthCourses).forEach(course => {
+                const title = course.querySelector('h3').textContent.toLowerCase();
+                course.style.display = title.includes(searchQuery) ? 'block' : 'none';
+            });
+
+            Array.from(sixWeekCourses).forEach(course => {
+                const title = course.querySelector('h3').textContent.toLowerCase();
+                course.style.display = title.includes(searchQuery) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

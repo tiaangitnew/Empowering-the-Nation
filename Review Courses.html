@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Review Courses - Empowering the Nation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Empowering the Nation Logo">
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses_summary.html">Courses</a></li>
+                    <li><a href="contact us.html">Contact Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="AboutUs.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <h1>Review Your Selected Courses</h1>
+        
+        <!-- Section to display selected courses and calculate price -->
+        <section id="review-section">
+            <div id="selected-courses"></div>
+            <div id="total-price"></div>
+            <button onclick="calculateTotal()" class="button">Calculate Total Price</button>
+        </section>
+
+        <!-- Contact Details Form -->
+        <h2>Enter Your Contact Details</h2>
+        <form id="contact-form" onsubmit="return validateForm()">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}"><br><br> <!-- Validates 10-digit phone number -->
+
+            <button type="submit" class="button">Confirm Selection</button>
+        </form>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Empowering the Nation. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

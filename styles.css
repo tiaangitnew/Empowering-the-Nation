@@ -1,0 +1,312 @@
+/*reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic body styling: a clean font, nice line height, and a light background */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: #f5f5f5;
+    min-height: 100vh; /* Make sure it covers the full height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+/* Main content section: make it look neat and centered */
+main.content {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px; /* Limit width for larger screens */
+    width: 90%; /* Responsive size */
+    margin: 0 auto; /* Center it */
+    background-color: white;
+    border-radius: 10px; /* Rounded corners for a soft feel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form styling: Keep things spaced out and easy to read */
+form {
+    margin-top: 20px; /* Give the form some breathing room */
+}
+
+form label {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* A little space between the label and the input */
+    margin-bottom: 15px;
+}
+
+form input[type="checkbox"] {
+    width: auto; /* Checkbox stays its natural size */
+    margin: 0;
+}
+
+/* Header styles: a sleek blue background with centered content */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px;
+    background-color: #00609e; /* Bold blue */
+    color: white;
+    position: relative; /* So we can position the logo */
+}
+
+/* Position the logo to the left */
+header .logo {
+    position: absolute;
+    left: 20px; 
+    top: 0;
+    padding-top: 10px;
+}
+
+header .logo img {
+    max-height: 60px; /* Keep the logo small enough */
+}
+
+/* Navigation menu: clean, horizontal, and centered */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none; /* No bullets */
+    display: flex;
+    gap: 20px; /* Space between menu items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+nav ul li a:hover {
+    color: #f9a825; /* Bright yellow on hover */
+}
+
+nav ul li a.active {
+    background-color: #60bcef; /* Highlight current page */
+    color: #22489e;
+    font-weight: bold; /* Make it stand out */
+}
+
+/* Search bar: tucked to the right */
+.search-bar {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    font-size: 1em;
+    background-color: #22489e; /* Matches site colors */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #f9a825; /* Yellow hover effect */
+}
+
+/* Hero section with a full-width background image */
+.hero {
+    position: relative;
+    height: 400px;
+    background-image: url('images/About us image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Big, bold heading in the hero */
+.hero h1 {
+    font-size: 48px; /* Large title */
+    color: white;
+    z-index: 1;
+    position: relative;
+}
+
+/* Courses page: layout grid for course cards */
+.courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Space between cards */
+    margin-bottom: 20px;
+}
+
+.course {
+    background-color: #22489e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.course:hover {
+    transform: translateY(-5px); /* Lift up on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Slight shadow */
+}
+
+.course h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+/* Buttons inside course cards */
+.course a,
+.course button {
+    background-color: #fff;
+    color: #22489e;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.course a:hover,
+.course button:hover {
+    background-color: #22489e;
+    color: #fff;
+}
+
+/* Individual course page layout */
+.course-details {
+    text-align: center;
+}
+
+.course-details ul {
+    list-style-position: inside; /* Keep bullets inside the list */
+    padding: 0;
+}
+
+.course-image {
+    max-width: 50%; /* Keep images at a reasonable size */
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px; /* Soft corners */
+}
+
+/* Gallery section: consistent image sizes */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* General button styling */
+.button {
+    display: inline-block;
+    background-color: #60bcef;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.button:hover {
+    background-color: #4fa0ce; /* Darker blue on hover */
+}
+
+/* Footer styling */
+footer {
+    background-color: #757575;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: auto;
+}
+
+.footer-links a {
+    color: hwb(234 24% 24%); /* Soft yellow */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: hsl(236, 55%, 41%); /* Lighter yellow on hover */
+}
+
+/* Media query: Adjustments for smaller screens */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .hero h1 {
+        font-size: 2em; /* Scale down the hero text */
+    }
+
+    .gallery-image {
+        height: 200px; /* Smaller gallery image height */
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 5px; /* Narrower gaps for smaller screens */
+    }
+
+    .gallery-image {
+        height: 150px; /* Make gallery images even smaller */
+    }
+}
