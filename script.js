@@ -65,3 +65,10 @@ function validateForm() {
 
 // Display selected courses on page load
 window.onload = displaySelectedCourses;
+
+function clearSelectedCoursesAndGoBack() {
+    // Clear selected courses
+    localStorage.removeItem('cart');
+    // Redirect to courses summary page
+    window.location.href = 'courses_summary.html';
+}

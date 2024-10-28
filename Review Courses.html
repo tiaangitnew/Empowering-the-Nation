@@ -29,12 +29,12 @@
     <!-- Main Content -->
     <main class="content">
         <h1>Review Your Selected Courses</h1>
-        
+
         <!-- Section to display selected courses and calculate price -->
         <section id="review-section">
             <div id="selected-courses"></div>
             <div id="total-price"></div>
-            <button onclick="calculateTotal()" class="button">Calculate Total Price</button>
+            <button onclick="calculateTotal()" class="button">Calculate Total Price</button> <!-- Moved up -->
         </section>
 
         <!-- Contact Details Form -->
@@ -51,6 +51,11 @@
 
             <button type="submit" class="button">Confirm Selection</button>
         </form>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+            <button onclick="clearSelectedCoursesAndGoBack()" class="button">Change Selection</button> <!-- Updated functionality -->
+        </div>
 
     </main>
 
